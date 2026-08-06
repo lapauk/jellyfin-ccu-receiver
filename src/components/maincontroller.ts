@@ -23,7 +23,7 @@ import {
     play,
     detectBitrate
 } from './jellyfinActions';
-import { getDeviceProfile } from './deviceprofileBuilder';
+import { getDeviceProfile } from './staticCcuProfile';
 import { JellyfinApi } from './jellyfinApi';
 import { PlaybackManager, type PlaybackState } from './playbackManager';
 import { CommandHandler } from './commandHandler';

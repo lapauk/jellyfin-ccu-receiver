@@ -12,7 +12,7 @@ import {
     ticksToSeconds
 } from '../helpers';
 import { DocumentManager } from './documentManager';
-import { getDeviceProfile } from './deviceprofileBuilder';
+import { getDeviceProfile } from './staticCcuProfile';
 import {
     getPlaybackInfo,
     getLiveStream,
