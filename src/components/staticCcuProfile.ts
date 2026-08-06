@@ -23,11 +23,11 @@ import { SubtitleDeliveryMethod } from '@jellyfin/sdk/lib/generated-client/model
  * deterministic and immune to conservative/misreporting capability queries.
  *
  * Reference: Google Cast media support for Chromecast Ultra.
- *   - H.264  : High Profile, Level 4.2 (max 1080p)
- *   - HEVC   : Main / Main 10, Level 5.1 (max 4K60), HDR10
- *   - VP9    : Profile 0 / Profile 2 (max 4K)
- *   - Audio  : AAC-LC (stereo), AC3, EAC3, MP3, Opus, Vorbis, FLAC, WAV
- *   - Not    : AV1, DTS/DTS-HD, TrueHD, Dolby Vision, Matroska/MKV
+ * - H.264 : High Profile, Level 4.2 (max 1080p)
+ * - HEVC : Main / Main 10, Level 5.1 (max 4K60), HDR10
+ * - VP9 : Profile 0 / Profile 2 (max 4K)
+ * - Audio : AAC-LC (stereo), AC3, EAC3, MP3, Opus, Vorbis, FLAC, WAV
+ * - Not : AV1, DTS/DTS-HD, TrueHD, Dolby Vision, Matroska/MKV
  *
  * MKV is intentionally absent from the containers: the CCU has no Matroska
  * demuxer, so MKV files get server-side remuxed to MP4 (stream copy, no video
@@ -42,6 +42,10 @@ const HEVC_MAX_LEVEL = 153;
 
 /**
  * Create a new ProfileCondition.
+ * @param property - What property the condition should test.
+ * @param condition - The condition to test the values for.
+ * @param value - The value to use in the condition.
+ * @returns A profile condition created from the parameters.
  */
 function createProfileCondition(
     property: ProfileConditionValue,
